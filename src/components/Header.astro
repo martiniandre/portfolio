@@ -27,7 +27,7 @@ const socialMedias: ISocialMedias[] = [
 	<nav>
 		{
 			socialMedias.map((scMedia) => (
-				<a>
+				<a href={scMedia.href} target="_blank">
 					<i class={scMedia.iconClass + " fa-3x"} />
 				</a>
 			))
