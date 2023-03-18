@@ -4,30 +4,34 @@ import Logo from "../assets/trace.svg";
 interface ISocialMedias {
 	href: string;
 	iconClass: string;
+	name: string;
 }
 
 const socialMedias: ISocialMedias[] = [
 	{
 		href: "https://github.com/martiniandre",
 		iconClass: "fa-brands fa-github-alt",
+		name: "github",
 	},
 	{
 		href: "https://www.linkedin.com/in/martiniandre/",
 		iconClass: "fa-brands fa-linkedin-in",
+		name: "linkedin",
 	},
 	{
 		href: "mailto:andremartini.10@gmail.com?subject=Contact Andre",
 		iconClass: "fa-solid fa-envelope",
+		name: "email",
 	},
 ];
 ---
 
 <header>
-	<img src={Logo} alt="logo" />
+	<img src={Logo} alt="logo" height="50" width="50" />
 	<nav>
 		{
 			socialMedias.map((scMedia) => (
-				<a href={scMedia.href} target="_blank">
+				<a href={scMedia.href} target="_blank" aria-label={scMedia.name}>
 					<i class={scMedia.iconClass + " fa-3x"} />
 				</a>
 			))
@@ -42,10 +46,6 @@ const socialMedias: ISocialMedias[] = [
 		align-items: center;
 		height: 60px;
 		padding: 5px;
-	}
-
-	img {
-		height: 50px;
 	}
 
 	img:hover {
